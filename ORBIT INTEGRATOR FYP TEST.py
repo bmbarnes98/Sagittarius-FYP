@@ -14,11 +14,11 @@ vx = 0
 vy = 220
 
 def fx(x,y):
-    output = -G*mass*(x**2+y**2)**-(3/2)
+    output = -G*x*mass*(x**2+y**2)**-(3/2)
     return output
 
 def fy(x,y):
-    output = -G*mass*(x**2+y**2)**-(3/2)
+    output = -G*y*mass*(x**2+y**2)**-(3/2)
     return output
 
 #Kick Drift Kick integrator test
@@ -29,7 +29,7 @@ def KDK_Test(x,y,vx,vy,mass):
     vy_track = []
     
     
-    for i in range(10000):
+    for i in range(100000):
         
         #v(n+1/2)
         vx = vx + fx(x,y)*(timestep/2)
